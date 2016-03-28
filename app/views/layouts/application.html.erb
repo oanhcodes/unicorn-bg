@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Unicorns</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'layout', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,10 +10,11 @@
   <header>Unicorn Games</header>
 
 <nav>
-<% if current_user %>
-  Signed in as <%= current_user.name %> || <%= link_to "Logout", "/logout" %>
-<% else %>
-  <%= link_to "Login", "/login" %> || <%= link_to "Sign-up", "/signup" %>
+  <% if current_user %>
+    Signed in as <%= current_user.name %> || <%= link_to "Logout", "/logout" %>
+  <% else %>
+    <%= link_to "Login", "/login" %> || <%= link_to "Sign-up", "/signup" %>
+  <% end %>
 </nav>
 
 
