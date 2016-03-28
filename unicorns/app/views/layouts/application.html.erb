@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>Unicorn Games</header>
+
+<nav>
+<% if current_user %>
+  Signed in as <%= current_user.name %> || <%= link_to "Logout", "/logout" %>
+<% else %>
+  <%= link_to "Login", "/login" %> || <%= link_to "Sign-up", "/signup" %>
+</nav>
+
+
+<p class="flash"><%= flash.notice %></p>
+
 
 <%= yield %>
 
+  <footer>Brought to you by Team Unicorn</footer>
 </body>
 </html>
