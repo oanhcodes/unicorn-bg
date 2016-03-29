@@ -6,19 +6,21 @@
     <br>
     <br>
     <% @my_games.each do |game| %>
-      <li class="my_game_name"><%= game.name %></li>
-      <div class="my_game_pic"><%= game.image %></div>
+      <li class="my_game_name"><%= game.name.upcase %></li>
+
     <% end %>
   </div>
 
   <div class="user_friends_container">
     <h3 class="my_friends">My Friends</h3>
+    <p>Click a friend to view their games.</p>
     <% @friends.each do |friend| %>
-      <li class="my_friend_username"><%= friend.username %></li>
+      <%= link_to friend.username, user_path(friend) %><br>
     <% end %>
-    <!-- No to friend.username -->
-    <form>
-    <label>Invite a new friend to play games.</label>
+    <form class="new_friend_form">
+      <br>
+      <br>
+    <label>Invite a friend to play games.</label>
     <input type=text placeholder="Search by Username"
     </form>
     <!-- Create new friendship. -->
