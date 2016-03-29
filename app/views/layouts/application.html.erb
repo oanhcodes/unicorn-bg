@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Unicorns</title>
-  <%= stylesheet_link_tag    'layout', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Unicorn Game Database</title>
+  <link rel="stylesheet" type="text/css" href="layout.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>Unicorn Games</header>
+  <nav>
+    <ul class="right">
+      <% if current_user %>
+        <li>Signed in as <%= current_user.name %> | <%= link_to "Logout", "/logout" %></li>
+      <% else %>
+        <li><%= link_to "Login", "/login" %> | <%= link_to "Sign-up", "/signup" %></li>
+      <% end %>
+    </ul>
+  </nav>
 
-<nav>
-  <% if current_user %>
-    Signed in as <%= current_user.name %> || <%= link_to "Logout", "/logout" %>
-  <% else %>
-    <%= link_to "Login", "/login" %> || <%= link_to "Sign-up", "/signup" %>
-  <% end %>
-</nav>
+  
+  <header><a href="/">Title Goes Here!</a></header>
 
-
-<p class="flash"><%= flash.notice %></p>
-
-
-<%= yield %>
+  <div class="main-container">
+    <p class="flash"><%= flash.notice %></p>
+    <%= yield %>
+  </div>
 
   <footer>Brought to you by Team Unicorn</footer>
 </body>
+
 </html>
