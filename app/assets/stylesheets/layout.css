@@ -27,10 +27,14 @@ nav {
   background-color: #85144b;
 }
 
+nav ul {
+  display: inline-block;
+}
 
 nav ul li {
   display: inline;
   font-size: 18px;
+  color: white;
 }
 
 nav a {
@@ -49,7 +53,7 @@ footer {
   width: 100%;
   padding-top: 10px;
   height:25px;
-  position: absolute;
+  position: fixed;
   background-color:#85144b;
   font-style: italic;
   text-align: center;
@@ -64,7 +68,7 @@ footer {
 
 .main-container {
   width: 70%;
-  padding: 25px 25px;
+  padding: 0px 25px;
   margin: 80px auto;
 }
 
@@ -93,8 +97,8 @@ footer {
   display: inline-block;
   padding: 10px;
   margin: 10px;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   opacity: 0.7;
   background-repeat: no-repeat;
   background-size: cover;
@@ -109,7 +113,7 @@ footer {
 .homepage-main {
   background-color: #FFFFFE;
   border-radius: 20px;
-  width: 60%;
+  width: 55%;
   float: left;
   padding: 50px;
 }
