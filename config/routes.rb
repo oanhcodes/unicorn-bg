@@ -3,13 +3,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root to: 'games#index'
-  
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  put '/friendships' =>'friendships#update'
+  post '/friendships' =>'friendships#create'
   resources :games
 
   resources :users

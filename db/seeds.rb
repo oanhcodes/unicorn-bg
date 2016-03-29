@@ -39,11 +39,10 @@ review2 = Review.create!(reviewer_id: 2, game_id: 3, rating:4 , body: "I just le
 
 review3 = Review.create!(reviewer_id: 1, game_id: 2, rating:5 , body: "Best game EVER!!! I want to play this every second of evergy day!")
 
-Friendship.create!(friend_requestor_id: 1, friend_acceptor_id: 2)
-
-Friendship.create!(friend_requestor_id: 1, friend_acceptor_id: 3)
-
-Friendship.create!(friend_requestor_id: 2, friend_acceptor_id: 3)
+# user1.friend_request(user2)
+# user1.friend_request(user3)
+# user2.accept_request(user1)
+#
 
 OwnedGame.create!(owner_id: 1, game_id: 1)
 
