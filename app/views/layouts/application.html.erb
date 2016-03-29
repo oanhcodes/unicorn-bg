@@ -12,7 +12,7 @@
     <ul><li><a href="/">Unicorn Game Database</a></li></ul>
     <ul class="right">
       <% if current_user %>
-        <li>Signed in as <%= link_to "current_user.username" %> | <%= link_to "Logout", "/logout" %></li>
+        <li>Signed in as <%= link_to current_user.username %> | <%= link_to "Logout", "/logout" %></li>
       <% else %>
         <li><%= link_to "Login", "/login" %> | <%= link_to "Sign-up", "/signup" %></li>
       <% end %>
