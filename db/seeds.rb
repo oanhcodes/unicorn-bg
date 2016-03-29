@@ -6,12 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.delete_all
+Category.delete_all
+Review.delete_all
+Friendship.delete_all
+OwnedGame.delete_all
+Categorization.delete_all
 
-user1 = User.create!(email: "mikelikesbikes@gmail.com", username: "mikelikesbikes", password_digest: "password")
+user1 = User.create!(email: "mikelikesbikes@gmail.com", username: "mikelikesbikes", password: "password")
 
-user2 = User.create!(email: "paullikespuppies@gmail.com", username: "paullikespuppies", password_digest: "password")
+user2 = User.create!(email: "paullikespuppies@gmail.com", username: "paullikespuppies", password: "password")
 
-user3 = User.create!(email: "normlikesnothing", username: "normlikesnothing", password_digest: "password")
+user3 = User.create!(email: "normlikesnothing", username: "normlikesnothing", password: "password")
 
 game1 = Game.create!(gameId: 31232, name: "Monolopy", image: "www.monopoloy.com", description: "Make money, buy property, beat your friends! Yay Capitalism!", minPlayers: 2, maxPlayers: 5)
 
