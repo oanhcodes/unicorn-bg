@@ -1,0 +1,68 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3 {
+  color: blue;
+}
+
+.user_profile.container {
+
+}
+
+.user_friends_container {
+  background-color: #FFFFFE;
+  border-radius: 20px;
+  padding: 0px 25px;
+  width:25% ;
+  height: 500px;
+  /*float: right;*/
+  /*position: absolute;
+  top: 75px;*/
+  display: inline-block;
+  margin: 10px;
+
+}
+
+.user_games_container {
+  width: 50%;
+  padding: 0px 25px;
+  border-radius: 20px;
+  background-color: #FFFFFE;
+  display: inline-block;
+  margin: 10px;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+.my_game_name, .my_game_pic {
+  padding: 3px;
+}
+
+/*.my_friend_username {
+  padding: 3px;
+}*/
+
+
+.my_game_name {
+  border: 1px solid #AAAAAA;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+.my_game_name:hover {
+  opacity: .5;
+  color: black;
+}
+
