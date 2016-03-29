@@ -6,31 +6,32 @@
       <br>
       <br>
       <% @my_games.each do |game| %>
-        <li class="my_game_name"><%= game.title %></li>
-        <div class="my_game_pic"><%= game.image_url %></div>
+        <li class="my_game_name"><%= game.name %></li>
+        <div class="my_game_pic"><%= game.image %></div>
       <% end %>
     </div>
 
+
     <div class="user_friends_container">
-        <h3 class="my_friends">My Friends</h3>
-        <% @user.friends.each do |friend| %>
-          <%= friend.username %>
+      <h3 class="my_friends">My Friends</h3>
+      <p>Click a friend to view their games.</p>
+      <% @user.friends.each do |friend| %>
+        <%= link_to friend.username, user_path(friend) %>
+      <% end %>
+      <% if !@user.requested_friends.empty? %>
+        <h3 class="my_requested_friends">Users that have requested you</h3>
+        <% @user.requested_friends.each do |friend| %>
+          <%= link_to friend.username, user_path(friend) %>
+          <%=button_to "Accept request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id} , :method=>:put  %>
         <% end %>
-        <% if !@user.requested_friends.empty? %>
-          <h3 class="my_requested_friends">Users that have requested you</h3>
-          <% @user.requested_friends.each do |friend| %>
-            <%= friend.username %>
-            <%=button_to "Accept request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id} , :method=>:put  %>
-          <% end %>
-        <% end %>
+      <% end %>
 
-        <% if !@user.pending_friends.empty? %>
-          <h3 class="my_pending_friends">Users that you have requested</h3>
-          <% @user.pending_friends.each do |friend| %>
-            <%= friend.username %>
-          <% end %>
+      <% if !@user.pending_friends.empty? %>
+        <h3 class="my_pending_friends">Users that you have requested</h3>
+        <% @user.pending_friends.each do |friend| %>
+          <%= link_to friend.username, user_path(friend) %>
         <% end %>
-
+      <% end %>
     </div>
   </div>
 <% elsif current_user && current_user.friends_with?(@user) %>
@@ -40,14 +41,14 @@
       <br>
       <br>
       <% @my_games.each do |game| %>
-        <li class="my_game_name"><%= game.title %></li>
-        <div class="my_game_pic"><%= game.image_url %></div>
+        <li class="my_game_name"><%= game.name %></li>
+        <div class="my_game_pic"><%= game.image %></div>
       <% end %>
     </div>
     <div class="user_friends_container">
       <h3 class="my_friends"><%= @user.username %>'s Friends</h3>
       <% @user.friends.each do |friend| %>
-        <%= friend.username %>
+        <%= link_to friend.username, user_path(friend) %>
       <% end %>
     </div>
 <% elsif current_user %>

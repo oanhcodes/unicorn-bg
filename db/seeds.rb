@@ -13,11 +13,11 @@ user2 = User.create!(email: "paullikespuppies@gmail.com", username: "paullikespu
 
 user3 = User.create!(email: "normlikesnothing", username: "normlikesnothing", password: "password")
 
-game1 = Game.create!(title: "Monolopy", image_url: "www.monopoloy.com", description: "Make money, buy property, beat your friends! Yay Capitalism!", number_of_players: "2-5")
+game1 = Game.create!(gameId: 31232, name: "Monolopy", image: "www.monopoloy.com", description: "Make money, buy property, beat your friends! Yay Capitalism!", minPlayers: 2, maxPlayers: 5)
 
-game2 = Game.create!(title: "Settlers of Catan", image_url: "www.settlers.com", description: "Make a home, grow animals and follow lots of rules", number_of_players: "2-5")
+game2 = Game.create!(gameId: 23214, name: "Settlers of Catan", image: "www.settlers.com", description: "Make a home, grow animals and follow lots of rules", minPlayers: 3, maxPlayers:5)
 
-game3 = Game.create!(title: "Chess", image_url: "www.chess.com", description: "Kings, queens, pawns, squares", number_of_players: "2")
+game3 = Game.create!(gameId: 24328, name: "Chess", image: "www.chess.com", description: "Kings, queens, pawns, squares", minPlayers: 4, maxPlayers: 8)
 
 category1 = Category.create!(name: "dice", category_type: "game")
 
