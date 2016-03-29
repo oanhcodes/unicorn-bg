@@ -1,0 +1,17 @@
+<p>
+  <strong><%= @game.title %></strong>
+</p>
+
+<div class="game_image"><%= image_tag @game.image_url %></div>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p><strong>Players:</strong>
+  <%= @game.number_of_players %>
+</p>
+
+
+<%= link_to 'Back', users_path %>
