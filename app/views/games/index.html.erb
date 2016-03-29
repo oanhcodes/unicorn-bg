@@ -1,0 +1,13 @@
+<div class="homepage-main">
+<h2>Games</h2>
+
+<ul>
+  <% @games.each do |game| %>
+    <li class="game-listing"><%= link_to game.title.upcase, games_path, class: 'game_title' %></li>
+  <% end %>
+</ul>
+</div>
+
+<aside class="top-games">
+  <h2>Top Games</h2>
+</aside>
