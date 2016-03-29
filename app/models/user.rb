@@ -10,6 +10,28 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def friends
-    return self.requested_friendships + self.accepted_friendships
+    @req_friendships = self.requested_friendships
+    @accepted_friendships = self.accepted_friendships
+    @friend_ids = []
+
+    @req_friendships.each do |rfriendship|
+      @friend_ids << rfriendship.friend_acceptor_id
+    end
+
+    @accepted_friendships.each do |afriendship|
+      @friend_ids << afriendship.friend_requestor_id
+    end
+
+    @friends = []
+
+    @friend_ids.each do |id|
+      @friends << User.find(id)
+    end
+
+    return @friends
+
   end
+
+
+
 end

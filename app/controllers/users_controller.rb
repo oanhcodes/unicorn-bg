@@ -16,9 +16,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @games = @user.games
+    # make this so it only searches through this user's games
+    @my_games = @user.games
     @friends = @user.friends
-
   end
 
   private
