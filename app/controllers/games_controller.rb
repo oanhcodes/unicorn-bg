@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
   def index
-     @games = Game.all
+     @q = Game.ransack(params[:q])
+     @games = @q.result(distinct:true)
+     @users = User.all
   end
 
   def new
@@ -10,6 +12,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @q = Game.ransack(params[:q])
+    @games = @q.result(distinct:true)
     @game = Game.find(params[:id])
   end
 

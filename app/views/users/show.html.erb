@@ -5,9 +5,9 @@
     <%= link_to "Add Game", new_game_path %>
     <br>
     <br>
-    <% @games.each do |game| %>
-      <li class="my_game_name"><%= game.title %></li>
-      <div class="my_game_pic"><%= game.image_url %></div>
+    <% @my_games.each do |game| %>
+      <li class="my_game_name"><%= game.name %></li>
+      <div class="my_game_pic"><%= game.image %></div>
     <% end %>
   </div>
 
