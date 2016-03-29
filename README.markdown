@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/timlkelly/unicorn-bg.svg?branch=master)](https://travis-ci.org/timlkelly/unicorn-bg)
+
 ***TEAM UNICORN***
 
 **Team Members**
