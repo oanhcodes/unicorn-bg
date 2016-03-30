@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+gem 'xml-simple'
+gem "http"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -26,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'ransack'
 
+gem 'has_friendship'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor'
@@ -50,4 +54,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

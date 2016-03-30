@@ -18,7 +18,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # make this so it only searches through this user's games
     @my_games = @user.games
-    @friends = @user.friends
+  end
+
+  def index
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
   end
 
   private

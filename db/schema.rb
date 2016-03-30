@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160329224349) do
+=======
+ActiveRecord::Schema.define(version: 20160329191939) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,10 +44,13 @@ ActiveRecord::Schema.define(version: 20160329224349) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.integer  "friend_requestor_id"
-    t.integer  "friend_acceptor_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.integer  "friendable_id"
+    t.string   "friendable_type"
+    t.integer  "friend_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "blocker_id"
   end
 
   create_table "games", force: :cascade do |t|

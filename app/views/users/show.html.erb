@@ -1,29 +1,81 @@
-
-<div class="user_profile_container">
-  <div class="user_games_container">
-    <h3 class="my_games">My Games</h3>
-    <%= link_to "Add Game", new_game_path %>
-    <br>
-    <br>
-    <% @my_games.each do |game| %>
-      <li class="my_game_name"><%= game.name.upcase %></li>
-
-    <% end %>
-  </div>
-
-  <div class="user_friends_container">
-    <h3 class="my_friends">My Friends</h3>
-    <p>Click a friend to view their games.</p>
-    <% @friends.each do |friend| %>
-      <%= link_to friend.username, user_path(friend) %><br>
-    <% end %>
-    <form class="new_friend_form">
-      <br>
-      <br>
-    <label>Invite a friend to play games.</label>
-    <input type=text placeholder="Search by Username"
-    </form>
-    <!-- Create new friendship. -->
-  </div>
-
+<div class="user_header">
+  <h1><%= @user.username %></h1>
+  <% if current_user && !current_user.friends_with?(@user) && current_user != @user && !current_user.pending_friends.include?(@user)%>
+    <%=button_to "Send a friend request", {:controller => "friendships", :action => "create", :friend_id => @user.id, :user_id => current_user.id} , :method=>:post, class: "button"  %>
+  <% end %>
 </div>
+
+
+<% if current_user && current_user.id == params[:id].to_i %>
+  <div class="user_profile_container">
+    <div class="user_games_container">
+      <h3 class="my_games">My Games</h3>
+      <% @my_games.each do |game| %>
+        <li class="my_game_name"><%= game.name %></li>
+        <div class="my_game_pic"><%= game.image %></div>
+      <% end %>
+    </div>
+
+
+    <div class="user_friends_container">
+      <h3 class="my_friends">My Friends</h3>
+      <%= link_to "Find more friends", users_path, class: "button"%>
+      <ul>
+        <% @user.friends.each do |friend| %>
+          <li>
+            <%= link_to friend.username, user_path(friend) %>
+          </li>
+        <% end %>
+      </ul>
+
+      <% if !@user.requested_friends.empty? %>
+        <h3 class="my_requested_friends">Users that have requested you</h3>
+        <ul>
+          <% @user.requested_friends.each do |friend| %>
+            <li>
+              <%= link_to friend.username, user_path(friend) %>
+            </li>
+            <%=button_to "Accept request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id, :type => "accept"}, :method=>:put, class: "button"  %>
+            <%=button_to "Decline request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id, :type => "decline"}, :method=>:put, class: "button"  %>
+          <% end %>
+        </ul>
+
+      <% end %>
+
+      <% if !@user.pending_friends.empty? %>
+      <h3 class="my_pending_friends">Users that you have requested</h3>
+      <ul>
+        <% @user.pending_friends.each do |friend| %>
+          <li>
+            <%= link_to friend.username, user_path(friend) %>
+          </li>
+        <% end %>
+      </ul>
+
+      <% end %>
+    </div>
+  </div>
+<% elsif current_user && current_user.friends_with?(@user) %>
+  <div class="user_profile_container">
+    <div class="user_games_container">
+      <h3 class="my_games"><%= @user.username %>'s Games</h3>
+      <br>
+      <br>
+      <% @my_games.each do |game| %>
+        <li class="my_game_name"><%= game.name %></li>
+        <div class="my_game_pic"><%= game.image %></div>
+      <% end %>
+    </div>
+    <div class="user_friends_container">
+      <h3 class="my_friends"><%= @user.username %>'s Friends</h3>
+      <ul>
+        <% @user.friends.each do |friend| %>
+          <li>
+            <%= link_to friend.username, user_path(friend) %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+
+<% end %>
