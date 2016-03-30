@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   root 'games#index'
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -11,12 +13,17 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  resources :games do
+    resources :reviews
+  end
+
+
   resources :search, only: :show
 
   put '/friendships' =>'friendships#update'
   post '/friendships' =>'friendships#create'
 
-  resources :games
+
 
   resources :users
 
