@@ -2,15 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h3 {
-  color: blue;
-}
+
 
 .user_profile.container {
 
 }
 .user_header, .user_search{
-  background-color: #FFFFFE;
+  background-color:rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 5px 0px;
   text-align: center;
@@ -31,6 +29,11 @@ h3 {
   display: inline-block;
   margin: 10px;
 
+}
+
+.user_friends_container a{
+  color: white;
+  text-decoration: none;
 }
 
 .user_games_container {

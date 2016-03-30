@@ -16,5 +16,35 @@
   Max Num of Players: <%= @game.maxPlayers %>
 </p>
 
+<div class="review-container">
+  <p>Average rating:</p>
+  <div id="star"> <%= @game.average_rating %> </div>
+
+  <strong>Review this Game:</strong>
+  <%= form_for [ @game, @review ] do |f| %>
+    <p>
+    <label>Comment:</label><br>
+      <%= f.text_area :body, :placeholder => "What did you think about #{@game.name}?" %>
+    </p>
+    <p>
+      <p>How many unicorns would you give this game? The more unicorns, the more you love it!</p>
+      <%= f.text_field :rating, :placeholder => "Enter a number (1-5)" %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  <p><strong>Reviews of <%= @game.name %></strong></p>
+  <div class="review-list">
+      <% @reviews.each do |review| %>
+        <div class="review-list-item">
+          <p>Rating: <%= review.rating %></p>
+          <p>Review: <%= review.body %></p>
+          <p><span>-<%= review.reviewer.username %></span></p>
+        </div>
+      <% end %>
+  </div>
+</div>
 
 <%= link_to 'Back', users_path %>
