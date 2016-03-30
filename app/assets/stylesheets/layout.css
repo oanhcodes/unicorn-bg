@@ -51,6 +51,7 @@ nav a:hover {
 }
 
 footer {
+  margin-top: 100px;
   bottom: 0;
   right: 0;
   width: 100%;
@@ -87,7 +88,9 @@ footer {
 }
 
 .form-box {
-  padding-left: 400px;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .game-title {
@@ -103,25 +106,32 @@ footer {
   margin: 10px;
   width: 100px;
   height: 100px;
-  opacity: 0.7;
+  opacity: 0.8;
+  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.game-listing a {
+  text-decoration: none;
+  text-align: center;
+  font-family: Arial;
   color: black;
 }
 
 .game-listing:hover{
-  opacity: 1;
-  color: white;
+  opacity: 0.7;
+  background-color: white;
 }
+
 
 .homepage-main {
   box-sizing: border-box;
   background-color:rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 55%;
-
   float: left;  
-  padding: 50px;
+  padding: 0px 50px;
 }
 
 .top-games {
