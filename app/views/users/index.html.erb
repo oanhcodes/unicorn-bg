@@ -1,0 +1,14 @@
+<div class="user_search">
+  <%= search_form_for @q do |f| %>
+    <%= f.label :username_cont %>
+    <%= f.search_field :username_cont %>
+    <%= f.submit class: "button" %>
+  <% end %>
+
+  <ul>
+    <h3>User list</h3>
+    <% @users.each do |user| %>
+      <li><%= link_to user.username, user_path(user)%></li>
+    <% end %>
+  </ul>
+</div>
