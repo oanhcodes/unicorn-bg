@@ -3,6 +3,14 @@
   <strong><%= @game.name %></strong>
 </p>
 
+<% if current_user %>
+  <% if current_user.games.include?(@game)%>
+    
+  <% else %>
+    <%= button_to "Add game to my library", class: "button"%>
+  <% end %>
+<% end %>
+
 <div class="game_image"><%= image_tag @game.image %></div>
 
 
