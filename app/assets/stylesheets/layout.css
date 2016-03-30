@@ -131,3 +131,20 @@ footer {
   text-align: center;
 }
 
+.review-list {
+  border: 1px solid black;
+}
+
+.review-container {
+  background-color: #FFFFFE;
+}
+
+.review-list-item {
+  padding: 25px;
+  border-bottom: 1px solid black;
+  margin: 10px;
+}
+
+span {
+  font-size: 15px;
+}
