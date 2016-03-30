@@ -9,12 +9,12 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @game.description %>
+  <p><%= @game.description %><p>
 </p>
 
 <p><strong>Players:</strong>
-  Min Num of Players: <%= @game.minPlayers %>
-  Max Num of Players: <%= @game.maxPlayers %>
+  <p>Min Num of Players: <%= @game.minPlayers %></p>
+  <p>Max Num of Players: <%= @game.maxPlayers %></p>
 </p>
 
 <div class="review-container">
@@ -47,5 +47,5 @@
   </div>
 </div>
 
-<div class="back"><%= link_to 'Back', users_path %></strong>
+<div class="back"><%= link_to 'Back', root_path %></strong>
 </div>
