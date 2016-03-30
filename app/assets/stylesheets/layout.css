@@ -257,9 +257,11 @@ span {
 
 .back a:hover {
   text-decoration: underline;
+}
 
 .fake-button {
-	background-color: #717171;
+  margin-bottom: 25px;
+	background-color: gray;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;

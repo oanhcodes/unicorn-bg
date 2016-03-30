@@ -11,8 +11,7 @@
     <div class="user_games_container">
       <h3 class="my_games">My Games</h3>
       <% @my_games.each do |game| %>
-        <li class="my_game_name"><%= game.name %></li>
-        <div class="my_game_pic"><%= game.image %></div>
+        <div class="my_game_pic"><%= link_to image_tag(game.image), game_path(game), class: 'game_name' %></div>
       <% end %>
     </div>
 
@@ -62,8 +61,7 @@
       <br>
       <br>
       <% @my_games.each do |game| %>
-        <li class="my_game_name"><%= game.name %></li>
-        <div class="my_game_pic"><%= game.image %></div>
+        <div class="my_game_pic"><%= link_to image_tag(game.image), game_path(game), class: 'game_name' %></div>
       <% end %>
     </div>
     <div class="user_friends_container">

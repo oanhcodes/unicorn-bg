@@ -59,6 +59,11 @@ ul, li {
   padding: 3px;
 }
 
+.my_game_pic img {
+  width:200px;
+  height:200px;
+}
+
 /*.my_friend_username {
   padding: 3px;
 }*/
