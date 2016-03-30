@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+<<<<<<< HEAD
   resources :search, only: :show
 
+=======
+  put '/friendships' =>'friendships#update'
+  post '/friendships' =>'friendships#create'
+>>>>>>> master
   resources :games
 
   resources :users
