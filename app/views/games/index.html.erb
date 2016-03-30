@@ -11,6 +11,7 @@
 <ul class="game-list">
   <% @games.each do |game| %>
     <%= render partial: "thumbnail", locals: {game: game} %>
+
   <% end %>
 </ul>
 </div>
