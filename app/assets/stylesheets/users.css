@@ -13,6 +13,12 @@
   padding: 5px 0px;
   text-align: center;
 }
+
+.user_search a{
+  color: white;
+  text-decoration: none;
+}
+
 .user_header h1 {
   margin: 0px;
 }

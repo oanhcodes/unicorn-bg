@@ -25,6 +25,13 @@ class UsersController < ApplicationController
     @users = @q.result(distinct: true)
   end
 
+  def update
+    @game = Game.find(params[:game_id])
+    @user = User.find(params[:user_id])
+    @user.games << @game
+    redirect_to @user
+  end
+
   private
 
   def user_params

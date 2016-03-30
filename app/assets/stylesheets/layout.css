@@ -257,4 +257,19 @@ span {
 
 .back a:hover {
   text-decoration: underline;
+
+.fake-button {
+	background-color: #717171;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #525051;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:3px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #201f1f;
 }

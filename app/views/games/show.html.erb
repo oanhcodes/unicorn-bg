@@ -4,6 +4,16 @@
   <strong class="game-header"><%= @game.name %></strong>
 </p>
 
+<% if current_user %>
+  <% if current_user.games.include?(@game)%>
+    <p class="fake-button">
+      This game is already in your library
+    </p>
+  <% else %>
+    <%= button_to "Add game to my library",  {:controller => "users", :action => "update", :game_id => @game.id, :user_id => current_user.id} , :method=>:put ,class: "button"%>
+  <% end %>
+<% end %>
+
 <div class="game_image"><%= image_tag @game.image %></div>
 
 
@@ -49,3 +59,4 @@
 
 <div class="back"><%= link_to 'Back', root_path %></strong>
 </div>
+
