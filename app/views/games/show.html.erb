@@ -1,6 +1,7 @@
 <!-- best page ever -->
+<div class="show-page">
 <p>
-  <strong><%= @game.name %></strong>
+  <strong class="game-header"><%= @game.name %></strong>
 </p>
 
 <div class="game_image"><%= image_tag @game.image %></div>
@@ -18,3 +19,4 @@
 
 
 <%= link_to 'Back', users_path %>
+</div>
