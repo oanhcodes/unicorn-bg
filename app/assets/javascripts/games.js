@@ -24,10 +24,16 @@ $(".review-container").on("submit", "form", function(event) {
       event.preventDefault();
 
       var query = $(this).find('input[type="search"]').val();
-      $.get('/search/' + query, function(response){
+      var request = $.get('/search/' + query, function(response){
         $(".game-list").append(response);
       })
 
+
+      request.fail(function(xhr, status, errorThrown) {
+        if(xhr.status === 500) {
+          window.location = "/500"
+        }
+      })
   });
 });
 
