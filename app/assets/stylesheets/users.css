@@ -27,13 +27,14 @@
   background-color:rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 0px 25px;
-  width:25% ;
+  width:30% ;
   /*height: 500px;*/
   /*float: right;*/
   /*position: absolute;
   top: 75px;*/
   display: inline-block;
   margin: 10px;
+  float:right;
 
 }
 
@@ -43,7 +44,7 @@
 }
 
 .user_games_container {
-  width: 50%;
+  width: 52%;
   padding: 0px 25px 25px 25px;
   border-radius: 20px;
   background-color:rgba(0, 0, 0, 0.5);
@@ -57,6 +58,13 @@ ul, li {
 
 .my_game_name, .my_game_pic {
   padding: 3px;
+}
+
+.my_game_pic img {
+  width:150px;
+  height:150px;
+  position: relative;
+  display: inline-block;
 }
 
 /*.my_friend_username {
