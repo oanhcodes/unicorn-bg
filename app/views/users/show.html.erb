@@ -10,7 +10,6 @@
   <div class="user_profile_container">
     <div class="user_games_container">
       <h3 class="my_games">My Games</h3>
-      <%= link_to "Add Game", new_game_path %>
       <% @my_games.each do |game| %>
         <li class="my_game_name"><%= game.name %></li>
         <div class="my_game_pic"><%= game.image %></div>
