@@ -10,7 +10,11 @@ class FriendshipsController < ActionController::Base
   def update
     user = User.find(params[:user_id])
     friend = User.find(params[:friend_id])
-    user.accept_request(friend)
+    if params[:type] == "accept"
+      user.accept_request(friend)
+    else
+      user.decline_request(friend)
+    end
     redirect_to user
   end
 

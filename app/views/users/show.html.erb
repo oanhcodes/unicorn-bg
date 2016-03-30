@@ -1,10 +1,16 @@
+<div class="user_header">
+  <h1><%= @user.username %></h1>
+  <% if current_user && !current_user.friends_with?(@user) && current_user != @user && !current_user.pending_friends.include?(@user)%>
+    <%=button_to "Send a friend request", {:controller => "friendships", :action => "create", :friend_id => @user.id, :user_id => current_user.id} , :method=>:post, class: "button"  %>
+  <% end %>
+</div>
+
+
 <% if current_user && current_user.id == params[:id].to_i %>
   <div class="user_profile_container">
     <div class="user_games_container">
       <h3 class="my_games">My Games</h3>
       <%= link_to "Add Game", new_game_path %>
-      <br>
-      <br>
       <% @my_games.each do |game| %>
         <li class="my_game_name"><%= game.name %></li>
         <div class="my_game_pic"><%= game.image %></div>
@@ -14,6 +20,7 @@
 
     <div class="user_friends_container">
       <h3 class="my_friends">My Friends</h3>
+      <%= link_to "Find more friends", users_path %>
       <p>Click a friend to view their games.</p>
       <% @user.friends.each do |friend| %>
         <%= link_to friend.username, user_path(friend) %>
@@ -22,7 +29,8 @@
         <h3 class="my_requested_friends">Users that have requested you</h3>
         <% @user.requested_friends.each do |friend| %>
           <%= link_to friend.username, user_path(friend) %>
-          <%=button_to "Accept request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id} , :method=>:put  %>
+          <%=button_to "Accept request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id, :type => "accept"}, :method=>:put, class: "button"  %>
+          <%=button_to "Decline request", {:controller => "friendships", :action => "update", :friend_id => friend.id, :user_id => current_user.id, :type => "decline"}, :method=>:put, class: "button"  %>
         <% end %>
       <% end %>
 
@@ -51,6 +59,5 @@
         <%= link_to friend.username, user_path(friend) %>
       <% end %>
     </div>
-<% elsif current_user %>
-  <%=button_to "Send a friend request", {:controller => "friendships", :action => "create", :friend_id => @user.id, :user_id => current_user.id} , :method=>:post  %>
+
 <% end %>

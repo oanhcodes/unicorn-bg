@@ -20,6 +20,11 @@ class UsersController < ApplicationController
     @my_games = @user.games
   end
 
+  def index
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
+  end
+
   private
 
   def user_params
