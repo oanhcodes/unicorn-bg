@@ -18,7 +18,9 @@ class Game < ActiveRecord::Base
     @rating_sum = 0
     @ratings.each { |rating| @rating_sum+=rating }
 
-    @average_rating = @rating_sum/@ratings.length
+    if @ratings.length > 0
+      @average_rating = @rating_sum/@ratings.length
+    end
   end
 
 end

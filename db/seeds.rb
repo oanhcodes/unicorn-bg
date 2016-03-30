@@ -62,6 +62,8 @@ OwnedGame.create!(owner_id: 2, game_id: 2)
 
 OwnedGame.create!(owner_id: 3, game_id: 3)
 
+50.times { Categorization.create!(game_id: Game.all.sample.id, category_id: Category.all.sample.id) }
+
 # Categorization.create!(game_id: 1, category_id: 1)
 
 # Categorization.create!(game_id: 1, category_id: 2)

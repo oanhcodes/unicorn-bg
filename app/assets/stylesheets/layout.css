@@ -113,6 +113,11 @@ footer {
   background-size: cover;
 }
 
+.game-listing img {
+  width: 100px;
+  heigh: 100px;
+}
+
 .game-listing a {
   text-decoration: none;
   text-align: center;
@@ -164,15 +169,19 @@ footer {
 }
 
 .review-list {
-  border: 1px solid black;
+  color: black;
 }
 
 .review-container {
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 25px;
   background-color: #FFFFFE;
+  color: black;
 }
 
 .review-list-item {
-  padding: 25px;
+  padding: 10px;
   border-bottom: 1px solid black;
   margin: 10px;
 }
@@ -239,4 +248,13 @@ span {
   padding: 50px 50px;
   border-radius: 20px;
   background-color:rgba(0, 0, 0, 0.5);
+}
+
+.back a {
+  text-decoration: none;
+  color: white;
+}
+
+.back a:hover {
+  text-decoration: underline;
 }
