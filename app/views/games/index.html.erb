@@ -8,9 +8,9 @@
       <% end %>
 </div>
 
-<ul>
+<ul class="game-list">
   <% @games.each do |game| %>
-    <li class="game-listing"><%= link_to game.name.upcase, games_path, class: 'game_name' %></li>
+    <%= render partial: "thumbnail", locals: {game: game} %>
   <% end %>
 </ul>
 </div>
