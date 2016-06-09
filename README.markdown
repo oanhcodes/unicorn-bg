@@ -3,11 +3,7 @@
 ***TEAM UNICORN***
 
 **Team Members**
-LeeAnne Hawley
-Sarah Finken-Hernandez
-Linda Oanh Ho
-Tim Kelly
-Kathryn Garbacz
+LeeAnne Hawley, Sarah Finken-Hernandez, Linda Oanh Ho, Tim Kelly, Kathryn Garbacz
 
 **User Stories**
 * I want to create an account
